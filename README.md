@@ -16,4 +16,4 @@ API는 성능을 고려하여 Sync 타입과 Async 타입으로 분류됩니다.
 |Withdrawal Address|Partners|DATAM|Partner사의 사용자가 보유한 외부에서 사용할 수 있는<br>블록체인 주소에 대한 검증 및 등록/변경 (인출주소) ||
 |Withdrawal pre-trade|Partners|DATAM|인출 예비 거래||
 |Withdrawal|Partners|DATAM|인출 가능 토큰(Private Token 등)을 외부 주소로 인출|Async|
-|Block Notify|DATAM|Partners|Exchange API, Withdrawal API의 블록체인 처리 결과 전송<br>(Confirm 완료 여부)|Async|
+|Block Notify|DATAM|Partners|Exchange API, Withdrawal API의 블록체인 처리 결과 전송(Confirm 완료 여부)|Async|
