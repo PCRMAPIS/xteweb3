@@ -1,5 +1,5 @@
 
-## 1. Exchange Rate Inquiry API (Partners → MW30P)
+## 1. Exchange Rate Inquiry API (Partners → DATAM)
 
 Exchange Rate Inquiry API는 환율 정보를 제공합니다(Item, Point, etc  PlayToken, PlayToken  Item, Point, etc). 이 API를 통해 Exchange API에 환율정보를 적용해야 합니다.
 
@@ -16,8 +16,8 @@ Exchange Rate Inquiry API는 환율 정보를 제공합니다(Item, Point, etc �
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>0000000000013</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>0000000000013</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>20220316192601001</sub>|
 |<sub>fromCurrency</sub>|<sub>Y</sub>|<sub>10</sub>|<sub>요청단위</sub>|<sub>전환 요청 통화코드(Item, Token 등)</sub>|<sub>GOLD</sub>|
 |<sub>toCurrency</sub>|<sub>Y</sub>|<sub>10</sub>|<sub>전환단위</sub>|<sub>전환 대상 통화코드(Item, Token 등)</sub>|<sub>SLAYB</sub>|
@@ -29,8 +29,8 @@ Exchange Rate Inquiry API는 환율 정보를 제공합니다(Item, Point, etc �
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>Same as requested value</sub>|
 |<sub>fromCurrency</sub>|<sub>Y</sub>|<sub>10</sub>|<sub>요청단위</sub>|<sub>전환 요청 통화코드(Item, Token 등)</sub>|<sub>GOLD</sub>|
 |<sub>toCurrency</sub>|<sub>Y</sub>|<sub>10</sub>|<sub>전환단위</sub>|<sub>전환 대상 통화코드(Item, Token 등)</sub>|<sub>SLAYB</sub>|
@@ -94,7 +94,7 @@ Exchange Rate Inquiry API는 환율 정보를 제공합니다(Item, Point, etc �
 <br>
 <br>
 
-## 2. Exchange API (Partners → MW30P)
+## 2. Exchange API (Partners → DATAM)
 
 제휴사의 사용자가 보유한 요청단위(아이템, 포인트, 토큰 등)에 대해 전환단위(아이템, 포인트, 토큰 등)로 변환합니다. Exchange 요청을 위해서는 Exchange Rate Inquiry API를 통해 환율정보를 적용해야 합니다.
 
@@ -109,8 +109,8 @@ Exchange Rate Inquiry API는 환율 정보를 제공합니다(Item, Point, etc �
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>000000000001</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>000000000001</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>20220316192601001</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY). 사용자의 디바이스(모바일, PC 등)의 분실 또는 파손 등으로 변경이 발생해도 사용자의 자산을 관리가 가능하도록 사용자 고유 Key가 반드시 필요함.</sub>|<sub>userid@usermail.url</sub>|
 |<sub>fromCurrency</sub>|<sub>Y</sub>|<sub>10</sub>|<sub>요청단위</sub>|<sub>전환 요청 통화코드(Item, Token 등)</sub>|<sub>GOLD</sub>|
@@ -127,8 +127,8 @@ Exchange Rate Inquiry API는 환율 정보를 제공합니다(Item, Point, etc �
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>Same as requested value</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>fromCurrency</sub>|<sub>Y</sub>|<sub>10</sub>|<sub>요청단위</sub>|<sub>전환 요청 통화코드(Item, Token 등)</sub>|<sub>GOLD</sub>|
@@ -205,7 +205,7 @@ Exchange Rate Inquiry API는 환율 정보를 제공합니다(Item, Point, etc �
 <br>
 <br>
 
-## 3. Passport API (Partners → MW30P)
+## 3. Passport API (Partners → DATAM)
 
 Exchange API, Passport API(비밀번호변경), Withdrawal Address API, API, Withdrawal API를 통한 등록, 변경, 전환, 인출 등의 주요 서비스는 Passport API를  인증 후 실행해야 합니다.
 
@@ -222,8 +222,8 @@ Exchange API, Passport API(비밀번호변경), Withdrawal Address API, API, Wit
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>000000000001</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>000000000001</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>20220316192601001</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>outAddress </sub>|<sub>Y</sub>|<sub>128</sub>|<sub>인출주소</sub>|<sub>사용 안함</sub>|<sub></sub>|
@@ -238,8 +238,8 @@ Exchange API, Passport API(비밀번호변경), Withdrawal Address API, API, Wit
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>Same as requested value</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>Papers</sub>|<sub>N</sub>|<sub>192</sub>|<sub>거래검증 KEY</sub>|<sub>Exchange API, Withdrawal Address API, Withdrawal API, Passport API에서 사용. Papers 생성 후 5분이후 해당 인증 소멸됨</sub>|<sub></sub>|
@@ -302,7 +302,7 @@ Exchange API, Passport API(비밀번호변경), Withdrawal Address API, API, Wit
 <br>
 <br>
 
-## 4. Withdrawal Address API (Partners → MW30P)
+## 4. Withdrawal Address API (Partners → DATAM)
 
 파트너사의 사용자가 보유한 Privatge Token(내부토큰)을 외부에서 사용할 수 있도록 외부주소(거래소 등에서 사용 가능한)를 정상여부 검증 및 등록을 수행합니다. 외부주소를 사용자가 정확히 입력하지 않아 발생하는 손실은 사용자에게 있습니다.
 
@@ -319,8 +319,8 @@ Exchange API, Passport API(비밀번호변경), Withdrawal Address API, API, Wit
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>000000000001</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>000000000001</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>20220316192601001</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>outAddress</sub>|<sub>Y</sub>|<sub>128</sub>|<sub>인출주소</sub>|<sub>거래소등에서 사용 가능한 채널 사용자의 퍼블릭 블록체인 주소</sub>|<sub></sub>|
@@ -333,8 +333,8 @@ Exchange API, Passport API(비밀번호변경), Withdrawal Address API, API, Wit
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>Same as requested value</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>outAddress</sub>|<sub>N</sub>|<sub>128</sub>|<sub>인출주소</sub>|<sub>거래소등에서 사용 가능한 채널 사용자의 퍼블릭 블록체인 주소</sub>|<sub></sub>|
@@ -405,8 +405,8 @@ Withdrawal pre-trade API는 Withdrawal API를 호출하기전 반드시 실행�
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>000000000001</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>000000000001</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>20220316192601001</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>fromCurrency</sub>|<sub>Y</sub>|<sub>10</sub>|<sub>요청단위</sub>|<sub>인출 요청 통화코드</sub>|<sub>SLAYB</sub>|
@@ -419,8 +419,8 @@ Withdrawal pre-trade API는 Withdrawal API를 호출하기전 반드시 실행�
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>Same as requested value</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>outAddress</sub>|<sub>Y</sub>|<sub>128</sub>|<sub>인출주소</sub>|<sub>거래소등에서 사용 가능한 채널 사용자의 퍼블릭 블록체인 주소</sub>|<sub></sub>|
@@ -513,8 +513,8 @@ Withdrawal pre-trade API는 Withdrawal API를 호출하기전 반드시 실행�
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>000000000001</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>000000000001</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>000001</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>20220316192601001</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>outAddress</sub>|<sub>Y</sub>|<sub>128</sub>|<sub>인출주소</sub>|<sub>거래소등에서 사용 가능한 채널 사용자의 퍼블릭 블록체인 주소</sub>|<sub></sub>|
@@ -537,8 +537,8 @@ Withdrawal pre-trade API는 Withdrawal API를 호출하기전 반드시 실행�
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>Same as requested value</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>outAddress</sub>|<sub>Y</sub>|<sub>128</sub>|<sub>인출주소</sub>|<sub>거래소등에서 사용 가능한 채널 사용자의 퍼블릭 블록체인 주소</sub>|<sub></sub>|
@@ -626,7 +626,7 @@ Withdrawal pre-trade API는 Withdrawal API를 호출하기전 반드시 실행�
 <br>
 
 
-## 6. Block Notify API (MW30P → Partners)
+## 6. Block Notify API (DATAM → Partners)
 
 Block Notify API는 Exchange API, Withdrawal API 등 블록체인 트랜잭션관련 주요 거래에 대한 효율을 고려하여 비동기 방식으로 트랜잭션 처리결과(Block Confirm 여부)를 통보합니다. 
 
@@ -641,8 +641,8 @@ Block Notify API는 Exchange API, Withdrawal API 등 블록체인 트랜잭션�
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|    
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>Same as requested value</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>netDivision</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>네트워크 구분</sub>|<sub>블록체인 네트워크 구분</sub>|<sub>SLAYB, VGEO</sub>|
@@ -656,8 +656,8 @@ Block Notify API는 Exchange API, Withdrawal API 등 블록체인 트랜잭션�
 
 | KEY |RQD|Len| Contents |Described|note|
 |-----|:-:|:-:| -------- |---------|----|    
-|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>MW30P에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
-|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>MW30P에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantId</sub>|<sub>Y</sub>|<sub>50</sub>|<sub>채널번호</sub>|<sub>DATAM에서 할당된 채널 번호</sub>|<sub>Same as requested value</sub>|
+|<sub>merchantInformation.merchantSiteId</sub>|<sub>Y</sub>|<sub>30</sub>|<sub>채널하위번호</sub>|<sub>DATAM에서 할당된 하위채널 번호</sub>|<sub>Same as requested value</sub>|
 |<sub>clientReferenceInformation.code</sub>|<sub>Y</sub>|<sub>20</sub>|<sub>거래번호</sub>|<sub>채널에서 생성하는 거래 유일값 (ex) System ID or Server ID+yyyMMdd+hhmmss+milisecond)</sub>|<sub>Same as requested value</sub>|
 |<sub>customerId</sub>|<sub>Y</sub>|<sub>64</sub>|<sub>사용자 ID</sub>|<sub>전체 생태계에서 유일한 사용자 고유 ID(KEY)</sub>|<sub>userid@usermail.url</sub>|
 |<sub>status</sub>|<sub>Y</sub>|<sub>10</sub>|<sub>처리결과</sub>|<sub>성공(SUCCSS), 실패(DECLINED)</sub>|<sub>SUCCESS, DECLINED</sub>|
