@@ -1,4 +1,4 @@
-# PCRM XTE WEN 3.0 
+# PCRM XTE WEB 3.0 
 
 - 홈페이지 : [data-m.ci.kr](http://www.data-m.co.kr/).
 
