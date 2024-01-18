@@ -370,7 +370,6 @@ contract PCRM is ERC20, Ownable, ITOKENLOCK {
     }
 
     function decBolt(address _to, uint256 _amount) public virtual onlyOwner {
-        require(_amount > 0, ERROR_NOT_ENOUGH);
         require(boltLocked(_to) > 0, ERROR_NO_LOCKED_TOKENS);
         baseTokensLocked[_to] = boltLocked(_to) - _amount;
         emitUpdateTokenBolt(_to);
