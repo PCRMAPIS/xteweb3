@@ -235,7 +235,7 @@ contract PCRM is ERC20, Ownable, ITOKENLOCK {
     string private  constant ERROR_INSUFFICIENT_TOKENS   = "Not enough tokens to lock";
     string private  constant ERROR_NO_LOCKED_TOKENS      = "No tokens are locked, create new lock first";
     string private  constant ERROR_BAD_NEW_LOCKED_AMT    = "New amount locked(unlocked) must be greater than current";
-    string private  constant ERROR_NOT_ENOUGH			   = "Not enough tokens to lock or unlock";
+    string private  constant ERROR_NOT_ENOUGH		 = "Not enough tokens to lock or unlock";
 		
     mapping (address => uint256) public baseTokensLocked; // the number of tokens locked up by HOLDER
 
@@ -372,10 +372,7 @@ contract PCRM is ERC20, Ownable, ITOKENLOCK {
     function decBolt(address _to, uint256 _amount) public virtual onlyOwner {
         require(_amount > 0, ERROR_NOT_ENOUGH);
         require(boltLocked(_to) > 0, ERROR_NO_LOCKED_TOKENS);
-        require(balanceOf(_to)- boltLocked(_to) < _amount, ERROR_NOT_ENOUGH);
-        
         baseTokensLocked[_to] = boltLocked(_to) - _amount;
-
         emitUpdateTokenBolt(_to);
     }
 
