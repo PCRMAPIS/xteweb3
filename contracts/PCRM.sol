@@ -2,6 +2,93 @@
 
 pragma solidity ^0.8.4;
 
+//@openzeppelin/contracts": "^4.8.0", @openzeppelin/contracts/utils/math/SafeMath.sol
+library SafeMath {
+
+    function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            uint256 c = a + b;
+            if (c < a) return (false, 0);
+            return (true, c);
+        }
+    }
+
+    function trySub(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            if (b > a) return (false, 0);
+            return (true, a - b);
+        }
+    }
+
+    function tryMul(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
+            // benefit is lost if 'b' is also tested.
+            // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
+            if (a == 0) return (true, 0);
+            uint256 c = a * b;
+            if (c / a != b) return (false, 0);
+            return (true, c);
+        }
+    }
+
+    function tryDiv(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            if (b == 0) return (false, 0);
+            return (true, a / b);
+        }
+    }
+
+    function tryMod(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+        unchecked {
+            if (b == 0) return (false, 0);
+            return (true, a % b);
+        }
+    }
+
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a + b;
+    }
+
+    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a - b;
+    }
+
+    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a * b;
+    }
+
+    function div(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a / b;
+    }
+
+    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a % b;
+    }
+
+    function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+        unchecked {
+            require(b <= a, errorMessage);
+            return a - b;
+        }
+    }
+
+    function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+        unchecked {
+            require(b > 0, errorMessage);
+            return a / b;
+        }
+    }
+
+    function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+        unchecked {
+            require(b > 0, errorMessage);
+            return a % b;
+        }
+    }
+}
+
+
 // @openzeppelin/contracts": "^4.8.0", @openzeppelin/contracts/utils/Context.sol
 abstract contract Context {
 
@@ -235,15 +322,11 @@ contract PCRM is ERC20, Ownable, ITOKENLOCK {
     string private  constant ERROR_INSUFFICIENT_TOKENS   = "Not enough tokens to lock";
     string private  constant ERROR_NO_LOCKED_TOKENS      = "No tokens are locked, create new lock first";
     string private  constant ERROR_BAD_NEW_LOCKED_AMT    = "New amount locked(unlocked) must be greater than current";
-    string private  constant ERROR_NOT_ENOUGH		 = "Not enough tokens to lock or unlock";
+    string private  constant ERROR_NOT_ENOUGH			   = "Not enough tokens to lock or unlock";
+    string internal constant AMOUNT_ZERO                 = 'Amount can not be 0';
 		
     mapping (address => uint256) public baseTokensLocked; // the number of tokens locked up by HOLDER
 
-    string internal constant INVALID_TOKEN_VALUES = 'Invalid token values';
-    string internal constant NOT_ENOUGH_TOKENS = 'Not enough tokens';
-    string internal constant ALREADY_LOCKED = 'Tokens already locked';
-    string internal constant NOT_LOCKED = 'No tokens locked';
-    string internal constant AMOUNT_ZERO = 'Amount can not be 0';
 
 	event ExpireJournal(bytes32 indexed _CreditOwner, bytes32 _Verifier, address _from, uint256 amount, uint256 indexed txId);
 
@@ -370,8 +453,12 @@ contract PCRM is ERC20, Ownable, ITOKENLOCK {
     }
 
     function decBolt(address _to, uint256 _amount) public virtual onlyOwner {
+        //require(_amount > 0, ERROR_NOT_ENOUGH);
         require(boltLocked(_to) > 0, ERROR_NO_LOCKED_TOKENS);
+        //require(balanceOf(_to)- boltLocked(_to) < _amount, ERROR_NOT_ENOUGH);
+        
         baseTokensLocked[_to] = boltLocked(_to) - _amount;
+
         emitUpdateTokenBolt(_to);
     }
 
